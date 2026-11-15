@@ -1,12 +1,14 @@
 export interface RawCountry {
-  name: { common: string; official: string };
-  flags: { png?: string; svg: string; alt?: string };
-  capital?: string[];
-  region: string;
-  population: number;
-  languages?: Record<string, string> | string[];
+  name: string | { common: string; official?: string };
+  flags?: { png?: string; svg?: string; alt?: string };
+  flag?: string;
+  capital?: string[] | string;
+  region?: string;
+  subregion?: string;
+  population?: number;
+  languages?: Record<string, string> | Array<{ name?: string } | string>;
   currencies?:
-    Record<string, { name: string; symbol: string }> | Array<{ name: string; symbol?: string }>;
+    Record<string, { name: string; symbol?: string }> | Array<{ name?: string; symbol?: string }>;
   area?: number;
   borders?: string[];
 }
