@@ -266,3 +266,39 @@ body {
 .detail-value {
   font-size: 0.95rem;
 }
+
+.history-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.history-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.history-chip {
+  padding: 0.25rem 0.65rem;
+  font-size: 0.85rem;
+  background-color: var(--surface);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.history-chip:hover {
+  border-color: var(--primary);
+  background-color: #eff6ff;
+}
