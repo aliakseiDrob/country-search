@@ -1,3 +1,4 @@
+import './styles.css';
 import { SearchController } from './core/searchController.js';
 import { createElement } from './ui/domHelpers.js';
 import { CountryDetailsModal } from './ui/modal.js';

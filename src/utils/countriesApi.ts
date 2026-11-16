@@ -19,7 +19,6 @@ function composeAbortSignal(
     return AbortSignal.any([externalSignal, timeoutSignal]);
   }
 
-  // Fallback for environments without AbortSignal.any
   const fallbackController = new AbortController();
 
   const onAbort = (source: AbortSignal): void => {

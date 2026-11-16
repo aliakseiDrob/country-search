@@ -60,7 +60,6 @@ export class SearchController {
   public handleInput(rawInput: string): void {
     const trimmed = rawInput.trim();
 
-    // Cancel any in-flight request immediately on every input change
     this.abortInFlight();
 
     if (!trimmed) {
@@ -119,7 +118,6 @@ export class SearchController {
   }
 
   private async executeSearch(query: string): Promise<void> {
-    // Guard against stale debounced callback if input changed or cleared right before timer fired
     if (this.state.query !== query) {
       return;
     }
@@ -137,7 +135,6 @@ export class SearchController {
     try {
       const results = await this.fetcher(query, controller.signal);
 
-      // Double check signal was not aborted while resolving
       if (controller.signal.aborted) {
         return;
       }
